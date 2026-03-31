@@ -1,10 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My First Website</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>I built this on GitHub Pages.</p>
-</body>
-</html>
+
+mport { useState } from 'react'
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
+
+export default function Website() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+        <nav className="max-w-6xl mx-auto flex items-center justify-between p-4">
+          <h1 className="text-xl font-bold">MyWebsite</h1>
+          <div className="hidden md:flex gap-6">
+            #featuresFeatures</a>
+            <a href="#about" className="hover:text-blue-600">About</a>
+            <a href="#contact" className="hover:text-blue-600">Contact</a>
+          </div>
+          <Button variant="outline" className="md:hidden" onClick={() => setOpen(!open)}>
+            {open ? <X /> : <Menu />}
+          </Button>
+        </nav>
+        {open && (
+          <div className="md:hidden px-4 pb-4 space-y-2">
+            <a href="#features" className="block">Features</a>
+            <a href="#about" className="block">About</a>
+            <a href="#contact" className="block">Contact</a>
+          </div>
+        )}
+      </header>
+
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 className="text-4xl font-bold leading-tight">Build Your Website Faster</h2>
+          <p className="mt-4 text-lg text-slate-600">
+            A clean, modern starter template you can customize for any project.
+          </p>
+          <div className="mt-6 flex gap-4">
+            <Button>Get Started</Button>
+            <Button variant="outline">Learn More</Button>
+          </div>
+        </div>
+        <Card className="rounded-2xl shadow-lg">
+          <CardContent className="p-8 text-center text-slate-500">
+            Placeholder for image, app preview, or illustration
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-semibold mb-10">Features</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {['Responsive Design', 'Modern UI', 'Easy Customization'].map((f) => (
+              <Card key={f} className="rounded-2xl">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-2">{f}</h4>
+                  <p className="text-slate-600">Built with best practices for today’s web.</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-semibold mb-4">About</h3>
+          <p className="text-slate-600 max-w-3xl">
+            This template uses React, Tailwind CSS, and shadcn/ui components. It’s designed
+            to be simple, fast, and easy to extend.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-semibold mb-6">Contact</h3>
+          <form className="max-w-md space-y-4">
+            <input className="w-full border rounded-xl p-3" placeholder="Your name" />
+            <input className="w-full border rounded-xl p-3" placeholder="Email" />
+            <textarea className="w-full border rounded-xl p-3" rows={4} placeholder="Message" />
+            <Button type="submit">Send Message</Button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-6 text-center text-slate-500">
+        © {new Date().getFullYear()} MyWebsite. All rights reserved.
+      </footer>
+    </div>
+  )
+}
