@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -11,7 +12,7 @@ export default function Website() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
         <nav className="max-w-6xl mx-auto flex items-center justify-between p-4">
-          <h1 className="text-xl font-bold">MyWebsite</h1>
+          <h1 className="text-xl font-bold">Kindness Hyde</h1>
           <div className="hidden md:flex gap-6">
             #featuresFeatures</a>
             <a href="#about" className="hover:text-blue-600">About</a>
@@ -21,7 +22,8 @@ export default function Website() {
             {open ? <X /> : <Menu />}
           </Button>
         </nav>
-        {open && ( <div className="md:hidden px-4 pb-4 space-y-2">
+        {open && (
+          <div className="md:hidden px-4 pb-4 space-y-2">
             <a href="#features" className="block">Features</a>
             <a href="#about" className="block">About</a>
             <a href="#contact" className="block">Contact</a>
@@ -32,9 +34,9 @@ export default function Website() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-4xl font-bold leading-tight">Build Your Website Faster</h2>
+          <h2 className="text-4xl font-bold leading-tight">My name is Kindness Hyde</h2>
           <p className="mt-4 text-lg text-slate-600">
-            A clean, modern starter template you can customize for any project.
+            I am an Investigative Journalism Graduate student at Walter Cronite School of Journalism and Mass Communications.
           </p>
           <div className="mt-6 flex gap-4">
             <Button>Get Started</Button>
