@@ -1,5 +1,4 @@
-
-mport { useState } from 'react'
+import { useState } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
@@ -22,8 +21,7 @@ export default function Website() {
             {open ? <X /> : <Menu />}
           </Button>
         </nav>
-        {open && (
-          <div className="md:hidden px-4 pb-4 space-y-2">
+        {open && ( <div className="md:hidden px-4 pb-4 space-y-2">
             <a href="#features" className="block">Features</a>
             <a href="#about" className="block">About</a>
             <a href="#contact" className="block">Contact</a>
